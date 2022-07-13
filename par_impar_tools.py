@@ -24,12 +24,13 @@ if __name__ == "__main__":
         """Numero do jogador, valida se é inteiro.
         É esperado uma string de parametro
         e mostra o numero que o jogador escolheu."""
-        player1_jogada = input(txt)
+        while True:
+            player1_jogada = input(txt).strip()
 
-        if not player1_jogada.isdecimal:
-            print("Numero invalido, tente outro:")
-        elif player1_jogada < "0":
-            print("Voce digitou um numero negativo. tente com um positivo agora:")
+            if not player1_jogada.isdecimal():
+                print("Numero invalido, tente outro:")
+            else:
+                break
 
         print(f"O numero escolhido foi {player1_jogada}:")
         return player1_jogada
