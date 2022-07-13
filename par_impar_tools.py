@@ -2,20 +2,12 @@ import random
 
 
 if __name__ == "__main__":
-
-    def comeco_brincadeira(txt="Olá, vamos brincar de par ou impar? 'DIGITE 0 PARA SAIR'."):
-        vamos_jogar = ""   
-        while vamos_jogar != 0:
-            vamos_jogar = input(txt)
-        
-            print("Ok, VAMOS LÁ!!!")
-        
-
+#usuario escolher entre par ou impar e restornar oque ele escolheu na tela.
     def par_ou_impar (txt="Escolha entre PAR ou IMPAR:"):
         perguntar_par_impar = ""
         while perguntar_par_impar != "par" and perguntar_par_impar != "impar":
             perguntar_par_impar = input(txt).lower().strip()
-    #se perguntar_par_impar for diferente de par ou impar, pergunte sempre.
+#se perguntar_par_impar for diferente de par ou impar, pergunte sempre.
         if perguntar_par_impar == "par":
             print("Você escolheu PAR.")
             return "par"
@@ -24,7 +16,7 @@ if __name__ == "__main__":
             return "impar"
 
 
-    #uma funcao global
+#uma variavel global
     resposta_par_impar = par_ou_impar()
 
 
@@ -42,7 +34,7 @@ if __name__ == "__main__":
         print(f"O numero escolhido foi {player1_jogada}:")
         return player1_jogada
 
-    #funcao global
+#variavel global
     player1 = validacao()
 
 
@@ -53,12 +45,12 @@ if __name__ == "__main__":
         return player2_jogada
 
 
-    #funcao global + soma
+#variavel global
     player2 = jogada_player2()
 
 
     def resultado(player1, player2, resposta_par_impar):
-        """importando as paradar de cima e respondendo o usuario. sao esperados o varores de
+        """importando as paradar de cima e respondendo o usuario. sao esperados o valores de
         player1 e 2 e resposta_par_impar"""
 
         soma = int(player1) + player2
@@ -67,26 +59,25 @@ if __name__ == "__main__":
 
         if soma%2 == 0:
             resultado == "par_ganha"
+            print(f"Resultado = {soma}")
             print("Par ganhou!")
         else:
+            print(f"Resultado = {soma}")
             print("Ímpar ganhou!")
 
 
         if resposta_par_impar == "par" and resultado == "par_ganha":
             print("Deu PAR, você ganhoou!!")
-            return "Você venceu!"
+            return 0
 
         elif resposta_par_impar == "impar" and resultado == "":
             print("Deu IMPAR, você ganhou!!")
-            return "Você venceu!"
+            return 0
 
         else:
             print("Que pena. Game Over")
-            return "Você perdeu!"
+            return 1
+    
 
-
-
-
-
-
+    resultado(player1, player2, resposta_par_impar)
 
