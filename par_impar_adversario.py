@@ -1,5 +1,5 @@
-from unittest.mock import CallableMixin
-from par_impar_tools import *
+# Cuidado com esses imports. O VS code coloca isso sozinho às vezes, por isso é bom ficar de olho
+# Note que você não usou o import do outro arquivo, então nem precisaria dele aqui.
 
 class Adversario:
     def __init__(self, nome= input("Qual seu nome?")):
@@ -53,7 +53,9 @@ class Adversario:
         resultado = ""
 
         if soma%2 == 0:
-            resultado == "par_ganha"
+            # Você usa o operador == você está na verdade comparando se duas coisas são iguais
+            # Para salvar um valor numa variável, use apenas um =
+            resultado = "par_ganha"  
             print(f"Resultado = {soma}")
             print("Par ganhou!")
         else:
